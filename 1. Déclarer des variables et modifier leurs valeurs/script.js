@@ -24,6 +24,8 @@ let numberOfCat = 3;
 
 numberOfCat= 4;
 
+console.log(numberOfCat);
+
 // Opérateurs arithmétiques - travail sur des nombres
 
 // Addition et soustraction

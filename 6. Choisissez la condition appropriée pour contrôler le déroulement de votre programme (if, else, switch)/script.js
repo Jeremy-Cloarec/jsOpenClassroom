@@ -7,8 +7,7 @@
 // Instruction conditionnelle : vérifie si certaines condition sont réunies et réagit en conséquence.
 
 // Utiliser des valeurs boolean
-
-
+let myBoolean=2
 if (myBoolean){
 //réaction à la valeur vraie de myBoolean
 } else {
@@ -17,7 +16,7 @@ if (myBoolean){
 
 
 
-let UserLoggedIn = true;
+let UserLoggedIn = false;
 if (UserLoggedIn) {
 	console.log("Utilisateur connecté!");
 } else {
@@ -31,15 +30,15 @@ if (UserLoggedIn) {
 
 // Les expressions de comparaison permettent de comparer deux valeurs par les opérateurs suivants : 
 
-// - < inférieur à ;
-// - < = inférieur ou égale ;
-// - = = égal à ;
-// - > supérieur à ;
-// - ! = différent de.
+// < inférieur à ;
+// < = inférieur ou égale ;
+// == égal à ;
+// > supérieur à ;
+// != différent de.
 
 const numberOfSeats = 30;
 const numberOfGuest = 25;
-if (numberOfGuests < numberOfSeats) {
+if (numberOfGuest < numberOfSeats) {
 //autoriser plus d'invités
 } else {
 // ne pas autoriser de nouveaux invités
@@ -49,9 +48,9 @@ if (numberOfGuests < numberOfSeats) {
 // On peut **chaîner** les instructions **if** / **else** pour réagir à des conditions potentielles multiples : 
 
 
-if (numberOfGuests == numberOfSeats) {
+if (numberOfGuest == numberOfSeats) {
 // tous les sieges sont occupés
-} else if (numberOfGuests < numberOfSeats) {
+} else if (numberOfGuest < numberOfSeats) {
 //autoriser plus d'invités
 } else {
     // ne pas autoriser de nouveaux invités
@@ -66,11 +65,11 @@ if (numberOfGuests == numberOfSeats) {
 
 // Pour réaliser cet exercice, voici comment vous allez procéder :
 
-// 1. Vous allez lire le code JavaScript, qui est intégralement commenté, pour bien comprendre à quoi sert chaque élément, et surtout les variables à votre disposition. Il y a sûrement des éléments que vous ne comprenez pas car vous n’avez pas encore vu comment manipuler du HTML en JavaScript, mais ici vous n’avez qu’à exploiter les variables et fonctions déjà codées.2. Vous allez écrire une condition if/else entre les lignes 34 et 38 qui appellera la fonction refuser() si l'âge saisi correspond à un mineur, et la fonction valider() s’il est majeur.
+// 1. Vous allez lire le code JavaScript, qui est intégralement commenté, pour bien comprendre à quoi sert chaque élément, et surtout les variables à votre disposition. Il y a sûrement des éléments que vous ne comprenez pas car vous n’avez pas encore vu comment manipuler du HTML en JavaScript, mais ici vous n’avez qu’à exploiter les variables et fonctions déjà codées.
+//2. Vous allez écrire une condition if/else entre les lignes 34 et 38 qui appellera la fonction refuser() si l'âge saisi correspond à un mineur, et la fonction valider() s’il est majeur.
 // 3. Attention, l'âge de la majorité a été stocké dans la variable ageMajorite, donc il faut utiliser cette variable dans la condition.
 
 // Une fois que vous aurez codé la bonne condition, vous pourrez enchaîner les tests en saisissant différents âges et en validant.
-
 
 // [https://codepen.io/quentin-laurent/pen/ExNdMQb](https://codepen.io/quentin-laurent/pen/ExNdMQb)
 
@@ -78,16 +77,23 @@ if (numberOfGuests == numberOfSeats) {
 
 // En JS, deux façon de vérifier si deux valeurs sont égales : 
 
-// - égalité **simple** vérifie la **valeur** mais pas le type. Donc ceci renvoie la valeur true :
-
+// - égalité simple vérifie la valeur mais pas le type. Donc ceci renvoie la valeur true :
 
 5 == "5"
 
-
-// - par contre l’égalité **stricte** renvoie à la fois la **valeur** et le **type**. Donc ceci renvoie la valeur false car on compare un number à une string.
-
+// - par contre l’égalité stricte renvoie à la fois la valeur et le type. Donc ceci renvoie la valeur false car on compare un number à une string.
 
 5 === "5"
+
+let nombre = 5
+let check = true;
+
+if (nombre==="5"){
+	check=true;
+}else{
+	check=false;
+}
+console.log(check);
 
 // De même, il y a deux opérateurs d’inégalité : =! et ==! avec la même distinction. 
 
@@ -95,6 +101,25 @@ if (numberOfGuests == numberOfSeats) {
 
 // Dans certaines situations, vous souhaitez vérifier plusieurs conditions pour un même résultats : par ex dans la même instruction if. Pour cela il existe des opérateurs logiques. 
 
-// - && - ET logique - pour vérifier si  deux conditions sont **toutes les deux vraie** ;
-// - || - OU logique - pour vérifier **si au moins une condition** est vraie ;
-// - ! - NON logique - pour vérifier **si une condition n’est pas vraie.**
+// - && - ET logique - pour vérifier si  deux conditions sont toutes les deux vraie ;
+// - || - OU logique - pour vérifier si au moins une condition est vraie ;
+// - ! - NON logique - pour vérifier si une condition n’est pas vraie.
+
+UserLoggedIn = true; 
+let UserHaspremiumAccount = true ;
+let UserHasMegaPremiumAccount = false ; 
+
+UserLoggedIn && UserHaspremiumAccount; //true
+UserLoggedIn && UserHasMegaPremiumAccount; //false
+
+UserLoggedIn || UserHaspremiumAccount; //true
+UserLoggedIn || UserHasMegaPremiumAccount; //true
+
+!UserLoggedIn; //false
+!UserHasMegaPremiumAccount;//true
+
+//Pratiquer les opérateurs logiques
+//Consigne : checkbox pour vérifier si l'utilisateur est majeur ou non
+//2 situations : 
+//1. Controle parental est activé : il faut être majeur;
+//2. Pas activé, tout le monde y accède
