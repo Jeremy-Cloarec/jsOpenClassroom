@@ -123,3 +123,110 @@ UserLoggedIn || UserHasMegaPremiumAccount; //true
 //2 situations : 
 //1. Controle parental est activé : il faut être majeur;
 //2. Pas activé, tout le monde y accède
+
+//Correction : https://codepen.io/quentin-laurent/pen/eYBQoMr
+
+//Appréhendez une notion importante : le scope des variables
+
+//En js, les variables créées par let et const ne peuvent ê vues qu'à l'intérieur du bloc de code dans lequel elles sont déclarées. Var : n'ont pas un scope de bloc mais de fonction. cf : https://www.geeksforgeeks.org/difference-between-var-and-let-in-javascript/ 
+//Bloc de code : section comprise entre accolade {}
+//Aussi : "portée des variables" "block scope"
+
+
+//Instruction Switch
+
+//Pour vérifier la valeur d'une varaible par rapport à une liste de valeur attendues. 
+//EX : objets utilisateurs. On souhaite vérifier quel type de compte a chacun pour envoyer un message personnalisé. 
+
+let firstUser = {
+    name: "Will Alexander",
+    age: 33,
+    accountLevel: "normal"
+};
+
+let secondUser = {
+    name: "Sarah Kate",
+    age: 21,
+    accountLevel: "premium"
+};
+
+let thirdUser = {
+    name: "Audrey Simon",
+    age: 27,
+    accountLevel: "mega-premium"
+};
+
+let fourthUser = {
+    name: "Audrey Simon",
+    age: 27,
+    accountLevel: "Youpiii"
+};
+
+
+switch (firstUser.accountLevel) {
+	case 'normal':
+		console.log('You have a normal account!');
+	
+	break;
+	case 'premium':
+		console.log('You have a premium account!');
+	
+	break;
+	case 'mega-premium':
+		console.log('You have a mega premium account!');
+	break;
+	
+	default:
+		console.log('Unknown account type!');
+	}
+
+switch (secondUser.accountLevel) {
+	case 'normal':
+		console.log('You have a normal account!');
+	
+	break;
+	case 'premium':
+		console.log('You have a premium account!');
+	
+	break;
+	case 'mega-premium':
+		console.log('You have a mega premium account!');
+	break;
+	
+	default:
+		console.log('Unknown account type!');
+	}
+
+switch (thirdUser.accountLevel) {
+	case 'normal':
+		console.log('You have a normal account!');
+	
+	break;
+	case 'premium':
+		console.log('You have a premium account!');
+	
+	break;
+	case 'mega-premium':
+		console.log('You have a mega premium account!');
+	break;
+	
+	default:
+		console.log('Unknown account type!');
+	}
+
+switch (fourthUser.accountLevel) {
+	case 'normal':
+		console.log('You have a normal account!');
+	
+	break;
+	case 'premium':
+		console.log('You have a premium account!');
+	
+	break;
+	case 'mega-premium':
+		console.log('You have a mega premium account!');
+	break;
+	
+	default:
+		console.log('Unknown account type!');
+	}

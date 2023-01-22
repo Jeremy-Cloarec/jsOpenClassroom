@@ -8,10 +8,13 @@ const bouton = document.getElementById("bouton");
 const ageInput = document.getElementById("age");
 //On pointe sur l'élément de la checkbox de contrôle parental
 const parentalInput = document.getElementById("parental");
-//On défini la variage age qu'on utilisera et un variable définissant l'age de la majorité
+//On défini la variable age qu'on utilisera et un variable définissant l'age de la majorité
 let age;
 let isControlParentalActive;
 let ageMajorite = 18;
+
+
+
 
 
 //Cette fonction affichera le message de validation
@@ -40,10 +43,10 @@ function onConfirm(){
 
    //====Code à rédiger ici======
   
-  if (isControlParentalActive){
-    alert ("Vous pouvez entrer")
+  if (isControlParentalActive==true&&age<18){
+    refuser()
   }else{
-    alert("Non !!")
+    valider()
   }
   
   //si non majeur et que le controle parental est activé appeller la fonction refuser(), sinon apeller la fonction valider()
@@ -53,8 +56,9 @@ function onConfirm(){
   
   //On vide le champ de saisie
   ageInput.value = "";
-}
 
+
+}
 
 
 //On écoute l'action de click sur le bouton et on appelle la fonction onConfirm
